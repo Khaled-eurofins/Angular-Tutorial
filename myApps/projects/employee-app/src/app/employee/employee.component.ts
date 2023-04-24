@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Employee } from '../../types/Employee';
 
 @Component({
@@ -8,12 +8,13 @@ import { Employee } from '../../types/Employee';
 })
 export class EmployeeComponent implements OnInit {
   @Input() employee: Employee = {} as Employee;
+  @Output() boxEvent = new EventEmitter<Employee>();
 
   constructor() {}
 
   ngOnInit(): void {}
 
   handleOnImageClick() {
-    console.log(this.employee);
+    this.boxEvent.emit(this.employee);
   }
 }
