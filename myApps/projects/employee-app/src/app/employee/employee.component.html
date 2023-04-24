@@ -1,0 +1,24 @@
+<div class="card shadow-sm">
+  <div class="image-fixed-height" (click)="handleOnImageClick()">
+    <img
+      src="https://picsum.photos/id/{{ employee.id + 10 }}/200"
+      class="card-img-top"
+      alt="${element.title}"
+    />
+  </div>
+  <div class="card-body">
+    <h5 class="card-name">{{ employee.name }}</h5>
+    <div class="card-email">
+      {{ employee.email }}
+    </div>
+    <div class="card-dob">
+      {{ employee.dob }}
+    </div>
+    <div class="card-gender">
+      {{ employee.gender }}
+    </div>
+    <div class="card-experience">
+      {{ employee.experience }}
+    </div>
+  </div>
+</div>

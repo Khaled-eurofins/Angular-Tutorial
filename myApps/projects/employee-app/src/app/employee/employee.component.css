@@ -1,0 +1,28 @@
+.image-fixed-height {
+  height: 250px;
+}
+
+.image-fixed-height img {
+  max-height: 100%;
+  max-width: 100%;
+  display: block;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.image-fixed-height:hover img {
+  transform: scale(1.03);
+}
+
+.col .card {
+  height: 100%;
+}
+
+.col .card-body {
+  padding-bottom: 0;
+}
+
+.col .card-footer {
+  background-color: white;
+  border-top: none;
+}

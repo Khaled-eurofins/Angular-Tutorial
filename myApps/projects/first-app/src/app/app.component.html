@@ -1,9 +1,42 @@
-<h1>{{ title }}</h1>
+<div class="container">
+  <h1>{{ title }}</h1>
 
-<p [id]="sayHelloId" [style.color]="fontColor">
-  You can set my color in the component!
-</p>
+  <p [id]="sayHelloId" [style.color]="fontColor">
+    You can set my color in the component!
+  </p>
 
-<button type="button" [disabled]="canClick" (click)="sayMessage()">
-  Trigger alert message
-</button>
+  <!-- Two way binding the event and property binding simultaneously -->
+
+  <div>
+    <input type="text" [(ngModel)]="name" />
+    <p>{{ name }}</p>
+  </div>
+
+  <!--  -->
+  <div>
+    <input type="text" (input)="handleOnChange()" />
+    <p>{{ name }}</p>
+  </div>
+
+  <button type="button" [disabled]="canClick" (click)="sayMessage()">
+    Trigger alert message
+  </button>
+
+  <h1 class="mb-3">NgIf + NgFor + Pipes</h1>
+
+  <button (click)="handleOnShow()" class="mb-3">
+    <ng-container *ngIf="!showBook">Show book</ng-container>
+    <ng-container *ngIf="showBook">Hide book</ng-container>
+  </button>
+
+  <div *ngIf="showBook" class="row">
+    <div *ngFor="let book of books; let i = index" class="col">
+      <div class="p-3 border border-1 border-dark-subtle">
+        <h1>{{ i + 1 }}- {{ book.title }}</h1>
+        <h5>{{ book.author | titlecase }}</h5>
+        <p>{{ book.description }}</p>
+        <p>Price: {{ book.price | currency }}</p>
+      </div>
+    </div>
+  </div>
+</div>
