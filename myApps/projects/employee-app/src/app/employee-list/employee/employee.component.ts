@@ -7,7 +7,7 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { Employee } from '../../types/Employee';
+import { Employee } from '../../../types/Employee';
 
 @Component({
   selector: 'app-employee',
