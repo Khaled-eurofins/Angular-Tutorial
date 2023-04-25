@@ -1,35 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
 import { Employee } from '../../types/Employee';
+import { EmployeeListService } from './employee-list.service';
 
-const employees = [
-  {
-    id: 1,
-    name: 'Khaled',
-    email: 'k@gmail.com',
-    dob: '05/05/1999',
-    gender: 'male',
-    experience: 5,
-  },
-  {
-    id: 2,
-    name: 'Ahmad',
-    email: 'ah@gmail.com',
-    dob: '05/05/1970',
-    gender: 'male',
-    experience: 32,
-  },
-];
 @Component({
   selector: 'app-employee-list',
   templateUrl: './employee-list.component.html',
   styleUrls: ['./employee-list.component.css'],
 })
-export class EmployeeListComponent implements OnInit {
-  employees: Employee[] = employees;
+export class EmployeeListComponent implements OnChanges, OnInit, OnDestroy {
+  employees: Employee[] = [];
 
-  constructor() {}
+  constructor(private employeeListService: EmployeeListService) {}
+  //This happens frequently, so any operation you perform here impacts performance significantly.
+  //The component has no inputs, so the framework will not call ngOnChanges().
+  //This happens frequently, so any operation you perform here impacts performance significantly.
+  ngOnChanges(): void {
+    console.log('OnChanges EmployeeList');
+  }
+  //Called once, after the first ngOnChanges()
+  ngOnInit(): void {
+    console.log('OnInit Employee List');
+    this.employees = this.employeeListService.getEmployees();
+  }
 
-  ngOnInit(): void {}
+  ngOnDestroy(): void {
+    console.log('OnDestroy Employee List');
+  }
 
   handleOnBoxClick(employee: Employee) {
     console.log(employee);

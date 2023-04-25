@@ -7,12 +7,12 @@
     />
   </div>
   <div class="card-body">
-    <h5 class="card-name">{{ employee.name }}</h5>
+    <h5 class="card-name">{{ employee.name | uppercase }}</h5>
     <div class="card-email">
-      {{ employee.email }}
+      {{ employee.email | lowercase }}
     </div>
     <div class="card-dob">
-      {{ employee.dob }}
+      {{ employee.dob | date : "MM/dd/yy" }}
     </div>
     <div class="card-gender">
       {{ employee.gender }}
