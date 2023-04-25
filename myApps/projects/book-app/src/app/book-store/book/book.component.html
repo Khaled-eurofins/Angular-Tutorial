@@ -1,0 +1,28 @@
+<div class="col">
+  <div class="card shadow-sm" (click)="handleOnClickBook()">
+    <div class="image-fixed-height">
+      <img
+        src="https://picsum.photos/id/{{ book.id + 9 }}/200"
+        class="card-img-top"
+        title="{{ book.title }}"
+        alt="{{ book.title }}"
+      />
+    </div>
+    <div class="card-body">
+      <h5 class="">{{ book.title }}</h5>
+      <div class="mb-2">
+        by <span class="text-primary">{{ book.author }}</span>
+      </div>
+      <p class="text-secondary">{{ book.subTitle }}</p>
+      <div>
+        <span>{{ book.price.value | currency : book.price.currency }}</span>
+      </div>
+    </div>
+    <div class="card-footer d-grid gap-2 d-md-flex justify-content-md-end">
+      <button class="btn btn-danger" (click)="handleOnAddToCart()">
+        Add to card
+      </button>
+      <a class="btn btn-primary">Read more</a>
+    </div>
+  </div>
+</div>

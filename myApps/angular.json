@@ -125,7 +125,9 @@
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "projects/employee-app/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -199,7 +201,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "sass"
+          "style": "scss"
         }
       },
       "root": "projects/book-app",
@@ -214,15 +216,19 @@
             "main": "projects/book-app/src/main.ts",
             "polyfills": "projects/book-app/src/polyfills.ts",
             "tsConfig": "projects/book-app/tsconfig.app.json",
-            "inlineStyleLanguage": "sass",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "projects/book-app/src/favicon.ico",
               "projects/book-app/src/assets"
             ],
             "styles": [
-              "projects/book-app/src/styles.sass"
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "projects/book-app/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -282,14 +288,12 @@
             "polyfills": "projects/book-app/src/polyfills.ts",
             "tsConfig": "projects/book-app/tsconfig.spec.json",
             "karmaConfig": "projects/book-app/karma.conf.js",
-            "inlineStyleLanguage": "sass",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "projects/book-app/src/favicon.ico",
               "projects/book-app/src/assets"
             ],
-            "styles": [
-              "projects/book-app/src/styles.sass"
-            ],
+            "styles": ["projects/book-app/src/styles.scss"],
             "scripts": []
           }
         }
